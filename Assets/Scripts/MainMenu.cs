@@ -19,20 +19,18 @@ public class MainMenu : MonoBehaviour
     {
         int index = PlayerPrefs.GetInt("StageLevel");
         textLevelInMenu.text = $"LEVEL {(index + 1)}";
-        if (textLevelInGame.text != (index+1).ToString())
-        {
-            if(index>=SceneManager.sceneCount) SceneManager.LoadScene(0);
-            else SceneManager.LoadScene(index);
-        }
+ 
     }
     public void ButtonClickEventStart()
     {
-       //Debug.Log("Game Start");
+        //Debug.Log("Game Start");
+        
         menuPanel.MoveTo(AfterStartEvent, inactivePosition);
 
     }
     private void AfterStartEvent()
     {
+        
         //bug.Log("Game Start");
         stageController.IsGameStart = true;
     }
